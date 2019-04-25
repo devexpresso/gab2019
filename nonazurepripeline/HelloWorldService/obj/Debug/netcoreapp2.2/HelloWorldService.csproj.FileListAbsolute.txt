@@ -1,0 +1,15 @@
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.csproj.CoreCompileInputs.cache
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.AssemblyInfoInputs.cache
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.AssemblyInfo.cs
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.deps.json
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.runtimeconfig.json
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.runtimeconfig.dev.json
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.dll
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.csprojAssemblyReference.cache
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.RazorAssemblyInfo.cache
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.RazorAssemblyInfo.cs
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.RazorTargetAssemblyInfo.cache
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.pdb
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\bin\Debug\netcoreapp2.2\HelloWorldService.xml
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.dll
+C:\devexpresso\ContainerBootCamp2019\Source\HelloWorldContainerDemo\HelloWorldService\obj\Debug\netcoreapp2.2\HelloWorldService.pdb

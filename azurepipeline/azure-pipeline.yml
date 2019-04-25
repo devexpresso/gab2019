@@ -1,0 +1,35 @@
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+variables:
+  dockerComposeFile: '**/docker-compose.yml'
+  additionalDockerComposeFiles: '**/docker-compose-override.yml'
+  azureSubscriptionEndpoint: azure_service_connection
+  azureContainerRegistry: demoregistryeastus1
+  helloWorldWebImageName: demoregistryeastus1.azurecr.io/helloworldweb:v1
+  helloWorldServiceImageName: demoregistryeastus1.azurecr.io/helloworldservice:v1
+  dockerLoginId: demoregistryeastus1
+  dockerPassword: e46chrcXUYpYcRBPcSRy37jl=fz/DK+P
+  registryServer: demoregistryeastus1.azurecr.io
+
+
+steps:
+- task: DockerInstaller@0
+  displayName:  'Docker Installer'
+  inputs:
+    dockerVersion: 17.09.0-ce
+    releaseType: stable
+
+- script: |
+    docker-compose -f $(dockerComposeFile) -f $(additionalDockerComposeFiles) up -d
+  displayName: 'Build docker image'
+
+- script: |
+    docker login -u $(dockerLoginId) -p "e46chrcXUYpYcRBPcSRy37jl=fz/DK+P" $(registryServer)
+    docker push $(helloWorldWebImageName)
+    docker push $(helloWorldServiceImageName)
+  displayName: 'Push docker image to ACR'
+
