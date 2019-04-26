@@ -2,12 +2,12 @@ version: '3.4'
 
 services:
   hellorworldweb:
-    image: demoregistryeastus.azurecr.io/helloworldweb:v1
+    image: myazurepipelinedemoregistry.azurecr.io/helloworldweb:v1
     ports:
       - "7001:80"
 
   helloworldservice:
-    image: demoregistryeastus.azurecr.io/helloworldservice:v1
+    image: myazurepipelinedemoregistry.azurecr.io/helloworldservice:v1
     ports:
       - "5001:80"
 
