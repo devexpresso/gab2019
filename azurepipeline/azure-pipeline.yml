@@ -28,7 +28,7 @@ steps:
   displayName: 'Build docker image'
 
 - script: |
-    docker login -u $(dockerLoginId) -p "e46chrcXUYpYcRBPcSRy37jl=fz/DK+P" $(registryServer)
+    docker login -u $(dockerLoginId) -p "tMxtMlPTQw9mw/FO2PPSk5i7z7NBzw3k" $(registryServer)
     docker push $(helloWorldWebImageName)
     docker push $(helloWorldServiceImageName)
   displayName: 'Push docker image to ACR'
