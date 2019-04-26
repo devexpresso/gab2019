@@ -5,15 +5,15 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 variables:
-  dockerComposeFile: '**/docker-compose.yml'
-  additionalDockerComposeFiles: '**/docker-compose-override.yml'
+  dockerComposeFile: '**/azurepipeline/docker-compose.yml'
+  additionalDockerComposeFiles: '**/azurepipeline/docker-compose-override.yml'
   azureSubscriptionEndpoint: azure_service_connection
-  azureContainerRegistry: demoregistryeastus1
-  helloWorldWebImageName: demoregistryeastus1.azurecr.io/helloworldweb:v1
-  helloWorldServiceImageName: demoregistryeastus1.azurecr.io/helloworldservice:v1
-  dockerLoginId: demoregistryeastus1
-  dockerPassword: e46chrcXUYpYcRBPcSRy37jl=fz/DK+P
-  registryServer: demoregistryeastus1.azurecr.io
+  azureContainerRegistry: myazurepipelinedemoRG
+  helloWorldWebImageName: myazurepipelinedemoregistry.azurecr.io/helloworldweb:v1
+  helloWorldServiceImageName: myazurepipelinedemoregistry.azurecr.io/helloworldservice:v1
+  dockerLoginId: myazurepipelinedemoregistry
+  dockerPassword: tMxtMlPTQw9mw/FO2PPSk5i7z7NBzw3k
+  registryServer: myazurepipelinedemoregistry.azurecr.io
 
 
 steps:
