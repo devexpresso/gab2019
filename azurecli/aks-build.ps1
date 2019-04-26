@@ -20,7 +20,7 @@ Write-Output "------------------------------------------------------------------
 echo "`n"
 
 echo "Store Azure Registry ID to the new variable AzureRegistryID"
-echo "Run command: Set-Variable -Name AzureRegistryID -Value `$(az acr show --resource-group containerdemoeastus --name demoregistryeastus --query ""id"")"
+echo "Run command: Set-Variable -Name AzureRegistryID -Value (az acr show --resource-group containerdemoeastus --name demoregistryeastus --query ""id"")"
 echo "`n"
 Set-Variable -Name AzureRegistryID -Value $(az acr show --resource-group containerdemoeastus --name demoregistryeastus --query "id")
 echo "OUTPUT"
@@ -30,13 +30,13 @@ echo "`n"
 
 
 echo "Create the Service Principal with access rights to registry. Store the Service Principal password to the variable ServicePrincipalID"
-echo "Run command: Set-Variable -Name ServicePrincipalPassword -Value `$(az ad sp create-for-rbac --name http://containerdemogab2019 --scope `$AzureRegistryID --role acrpull --query password)"
+echo "Run command: Set-Variable -Name ServicePrincipalPassword -Value (az ad sp create-for-rbac --name http://containerdemogab2019 --scope AzureRegistryID --role acrpull --query password)"
 echo "`n"
 Set-Variable -Name ServicePrincipalPassword -Value $(az ad sp create-for-rbac --name http://containerdemoeastus --scope $AzureRegistryID --role acrpull --query password)
 echo "OUTPUT"
 $ServicePrincipalPassword
 echo "`n"
-echo "Run command: Set-Variable -Name ServicePrincipalID -Value `$(az ad sp show --id http://containerdemogab2019 --query appId)"
+echo "Run command: Set-Variable -Name ServicePrincipalID -Value (az ad sp show --id http://containerdemogab2019 --query appId)"
 echo "`n"
 Set-Variable -Name ServicePrincipalID -Value $(az ad sp show --id http://containerdemoeastus --query appId)
 echo "OUTPUT"
@@ -45,7 +45,7 @@ Write-Output "------------------------------------------------------------------
 echo "`n"
 
 echo "Create AKS Cluster with one node"
-echo "Run command: az aks create --resource-group containerdemoeastus --name aksclusterdemoeastus --node-count 1 --service-principal `$ServicePrincipalID --client-secret `$ServicePrincipalPassword --generate-ssh-keys"
+echo "Run command: az aks create --resource-group containerdemoeastus --name aksclusterdemoeastus --node-count 1 --service-principal ServicePrincipalID --client-secret ServicePrincipalPassword --generate-ssh-keys"
 echo "`n"
 echo "OUTPUT"
 az aks create --resource-group containerdemoeastus --name aksclusterdemoeastus --node-count 1 --service-principal $ServicePrincipalID --client-secret $ServicePrincipalPassword --generate-ssh-keys
@@ -53,10 +53,10 @@ Write-Output "------------------------------------------------------------------
 echo "`n"
 
 echo "Merge credentials of AKS cluster to your local .kube config file"
-echo "Run command: az aks get-credentials --resource-group containerdemoeastus --name aksclusterdemoeastus"
+echo "Run command: az aks get-credentials --resource-group containerdemoeastus --name aksclusterdemoeastus --overwrite-existing"
 echo "`n"
 echo "OUTPUT"
-az aks get-credentials --resource-group containerdemoeastus --name aksclusterdemoeastus
+az aks get-credentials --resource-group containerdemoeastus --name aksclusterdemoeastus --overwrite-existing
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
@@ -69,7 +69,7 @@ Write-Output "------------------------------------------------------------------
 echo "`n"
 
 echo "Create an ACR image pull secret key which will authorize AKS to pull images from ACR using the Service Principal created earlier"
-echo "Run command: kubectl create secret docker-registry acr-auth --docker-server demoregistryeastus.azurecr.io --docker-username `$ServicePrincipalID --docker-password `$ServicePrincipalPassword --docker-email joydeep.ghosh@us.sogeti.com"
+echo "Run command: kubectl create secret docker-registry acr-auth --docker-server demoregistryeastus.azurecr.io --docker-username ServicePrincipalID --docker-password ServicePrincipalPassword --docker-email joydeep.ghosh@us.sogeti.com"
 echo "`n"
 echo "OUTPUT"
 kubectl create secret docker-registry acr-auth --docker-server demoregistryeastus.azurecr.io --docker-username $ServicePrincipalID --docker-password $ServicePrincipalPassword --docker-email joydeep.ghosh@us.sogeti.com
