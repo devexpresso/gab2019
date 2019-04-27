@@ -24,7 +24,7 @@ steps:
     releaseType: stable
 
 - script: |
-    install azure-cli
+    az login
   displayName: 'Install Azure CLI'
 
 - script: |
