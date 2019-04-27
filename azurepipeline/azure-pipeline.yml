@@ -24,6 +24,10 @@ steps:
     releaseType: stable
 
 - script: |
+    install azure-cli
+  displayName: 'Install Azure CLI'
+
+- script: |
     docker-compose -f $(dockerComposeFile) -f $(additionalDockerComposeFiles) up -d
   displayName: 'Build docker image'
 
