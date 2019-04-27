@@ -24,12 +24,6 @@ steps:
     releaseType: stable
 
 - script: |
-    az login --service-principal --username fef40809-8756-44c5-8694-48cfc3758e9b --password "p@ssW0rd@1234" --tenant 6085de46-5c5f-404e-bdc2-2a7227ddce84
-    az acr repository delete --name acrgab2019demo2 --repository helloworldweb
-    az acr repository delete --name acrgab2019demo2 --repository helloworldservice
-  displayName: 'Delete repositories'
-
-- script: |
     docker-compose -f $(dockerComposeFile) -f $(additionalDockerComposeFiles) up -d
   displayName: 'Build docker image'
 
