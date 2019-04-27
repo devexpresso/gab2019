@@ -5,7 +5,7 @@ EXPOSE 80
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["azurepipeline/HelloWorldService/HelloWorldService.csproj", "azurepipeline/HelloWorldService/"]
-RUN dotnet restore "HelloWorldContainerDemo/HelloWorldService/HelloWorldService.csproj"
+RUN dotnet restore "azurepipeline/HelloWorldService/HelloWorldService.csproj"
 COPY . .
 WORKDIR "/src/azurepipeline/HelloWorldService"
 RUN dotnet build "HelloWorldService.csproj" -c Release -o /app
