@@ -23,13 +23,15 @@ steps:
     dockerVersion: 17.09.0-ce
     releaseType: stable
 
-- script: |
-    az login
-  displayName: 'Install Azure CLI'
 
 - script: |
     docker-compose -f $(dockerComposeFile) -f $(additionalDockerComposeFiles) up -d
   displayName: 'Build docker image'
+
+- script: |
+    az acr repository delete --name acrgab2019demo2 --repository helloworldweb
+    az acr repository delete --name acrgab2019demo2 --repository helloworldservice
+  displayName: 'Delete repositories'
 
 - script: |
     docker login -u $(dockerLoginId) -p "yxHOAeC2LjQ3qKtCk5Y+olQTNZgtWQ5O" $(registryServer)
