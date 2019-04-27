@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY ["HelloWorldContainerDemo/HelloWorldWeb/HelloWorldWeb.csproj", "HelloWorldContainerDemo/HelloWorldWeb/"]
-RUN dotnet restore "HelloWorldContainerDemo/HelloWorldWeb/HelloWorldWeb.csproj"
+COPY ["azurepipeline/HelloWorldWeb/HelloWorldWeb.csproj", "azurepipeline/HelloWorldWeb/"]
+RUN dotnet restore "azurepipeline/HelloWorldWeb/HelloWorldWeb.csproj"
 COPY . .
-WORKDIR "/src/HelloWorldContainerDemo/HelloWorldWeb"
+WORKDIR "/src/azurepipeline/HelloWorldWeb"
 RUN dotnet build "HelloWorldWeb.csproj" -c Release -o /app
 
 FROM build AS publish
