@@ -24,7 +24,7 @@ steps:
     releaseType: stable
 
 - script: |
-    az login --service-principal -u $AppID --password $Password --tenant $Tenant
+    az login --service-principal --username $AppID --password $Password --tenant $Tenant
     az acr repository delete --name acrgab2019demo2 --repository helloworldweb
     az acr repository delete --name acrgab2019demo2 --repository helloworldservice
   displayName: 'Delete repositories'
