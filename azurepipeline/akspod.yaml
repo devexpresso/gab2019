@@ -11,7 +11,7 @@ spec:
   spec:
    containers:
    - name: helloworldwebapp
-     image: myazurepipelinedemoregistry.azurecr.io/helloworldweb:v1
+     image: acrgab2019demo2.azurecr.io/helloworldweb:v1
      ports:
      - containerPort: 8888
    imagePullSecrets:
@@ -42,7 +42,7 @@ spec:
   spec:
    containers:
    - name: helloworldservice
-     image: myazurepipelinedemoregistry.azurecr.io/helloworldservice:v1
+     image: acrgab2019demo2.azurecr.io/helloworldservice:v1
      ports:
      - containerPort: 5555
    imagePullSecrets:

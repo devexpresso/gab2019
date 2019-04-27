@@ -4,13 +4,13 @@ services:
   hellorworldweb:
     build:
       context: ..
-      dockerfile: azurecli/HelloWorldWeb/Dockerfile
+      dockerfile: azurepipeline/HelloWorldWeb/Dockerfile
 
     
   helloworldservice:
     build:
       context: ..
-      dockerfile: azurecli/HelloWorldService/Dockerfile
+      dockerfile: azurepipeline/HelloWorldService/Dockerfile
     
 
 

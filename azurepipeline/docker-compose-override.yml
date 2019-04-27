@@ -2,12 +2,12 @@ version: '3.4'
 
 services:
   hellorworldweb:
-    image: myazurepipelinedemoregistry.azurecr.io/helloworldweb:v1
+    image: acrgab2019demo2.azurecr.io/helloworldweb:v1
     ports:
       - "7001:80"
 
   helloworldservice:
-    image: myazurepipelinedemoregistry.azurecr.io/helloworldservice:v1
+    image: acrgab2019demo2.azurecr.io/helloworldservice:v1
     ports:
       - "5001:80"
 
