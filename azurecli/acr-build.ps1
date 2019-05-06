@@ -26,7 +26,7 @@ echo "Create a Resource Group for the Container Demo"
 echo "Run command: az group create --name aksgab2019demo1RG --location eastus"
 echo "`n"
 echo "OUTPUT"
-az group create --name aksgab2019demo1RG --location eastus
+az group create --name dockerdemoRG --location eastus
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
@@ -34,7 +34,7 @@ echo "Create Container Registry under the new resource group created"
 echo "Run command: az acr create --resource-group aksgab2019demo1RG --name acrgab2019demo1 --sku Basic"
 echo "`n"
 echo "OUTPUT"
-az acr create --resource-group aksgab2019demo1RG --name acrgab2019demo1 --sku Basic
+az acr create --resource-group dockerdemoRG --name acrdockerdemo --sku Basic
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
@@ -42,7 +42,7 @@ echo "Login to Container Registry created"
 echo "Run command: az acr login --name acrgab2019demo1"
 echo "`n"
 echo "OUTPUT"
-az acr login --name acrgab2019demo1
+az acr login --name acrdockerdemo
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
@@ -50,11 +50,11 @@ echo "Publish docker images created to container registry"
 echo "Run command: docker push  acrgab2019demo1.azurecr.io/helloworldweb:v1"
 echo "`n"
 echo "OUTPUT"
-docker push  acrgab2019demo1.azurecr.io/helloworldweb:v1
+docker push  acrdockerdemo.azurecr.io/helloworldweb:v1
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 echo "OUTPUT"
-docker push  acrgab2019demo1.azurecr.io/helloworldservice:v1
+docker push  acrdockerdemo.azurecr.io/helloworldservice:v1
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
@@ -62,7 +62,7 @@ echo "Verify that repositories has been created representing the container image
 echo "Run command: az acr repository list --name acrgab2019demo1 --output table"
 echo "`n"
 echo "OUTPUT"
-az acr repository list --name acrgab2019demo1 --output table
+az acr repository list --name acrdockerdemo --output table
 Write-Output "--------------------------------------------------------------------"
 echo "`n"
 
