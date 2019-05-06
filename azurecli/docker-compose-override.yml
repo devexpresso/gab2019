@@ -2,12 +2,12 @@ version: '3.4'
 
 services:
   hellorworldweb:
-    image: acrdockerdemo.azurecr.io/helloworldweb:v1
+    image: acrdockerdemoeastus.azurecr.io/helloworldweb:v1
     ports:
       - "7001:80"
 
   helloworldservice:
-    image: acrdockerdemo.azurecr.io/helloworldservice:v1
+    image: acrdockerdemoeastus.azurecr.io/helloworldservice:v1
     ports:
       - "5001:80"
 
